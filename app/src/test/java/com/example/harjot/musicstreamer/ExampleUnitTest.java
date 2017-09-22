@@ -1,4 +1,4 @@
-package com.sdsmdg.harjot.MusicDNA;
+package com.musicfm.cloud.MusicFM;
 
 import org.junit.Test;
 
