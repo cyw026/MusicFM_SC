@@ -207,7 +207,8 @@
                 android:layout_below="@+id/wifi_card"
                 android:background="@drawable/custom_ripple"
                 android:clickable="true"
-                android:padding="5dp">
+                android:padding="5dp"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="match_parent"

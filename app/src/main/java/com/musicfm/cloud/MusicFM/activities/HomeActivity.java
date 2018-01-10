@@ -70,6 +70,9 @@ import android.view.HapticFeedbackConstants;
 
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.gson.Gson;
 import com.lantouzi.wheelview.WheelView;
 import com.musicfm.cloud.MusicFM.adapters.playlistdialogadapter.AddToPlaylistAdapter;
@@ -242,7 +245,6 @@ public class HomeActivity extends AppCompatActivity
     public static int renamePlaylistNumber;
     public static AllPlaylists allPlaylists;
     public static AllMusicFolders allMusicFolders;
-    public static SoundCloudPlaylists cloudPlaylists;
 
     public static AllSavedDNA savedDNAs;
     public static SavedDNA tempSavedDNA;
@@ -297,11 +299,9 @@ public class HomeActivity extends AppCompatActivity
     RecyclerView localsongsRecyclerView;
     RecyclerView playlistsRecycler;
     RecyclerView recentsRecycler;
-    RecyclerView sc_playlistsRecycler;
 
     RelativeLayout localRecyclerContainer;
     RelativeLayout recentsRecyclerContainer;
-    RelativeLayout soundcloudRecyclerContainer;
     RelativeLayout streamRecyclerContainer;
     RelativeLayout playlistRecyclerContainer;
 
@@ -321,7 +321,6 @@ public class HomeActivity extends AppCompatActivity
     TextView streamNothingText;
     TextView recentsNothingText;
     TextView playlistNothingText;
-    TextView soundCloudNothingText;
 
     public static int screen_width;
     public static int screen_height;
@@ -331,7 +330,7 @@ public class HomeActivity extends AppCompatActivity
     ImageView[] imgView = new ImageView[10];
     public CustomLinearGradient customLinearGradient;
 
-    TextView recentsViewAll, playlistsViewAll, soundCloudViewAll;
+    TextView recentsViewAll, playlistsViewAll;
 
     public static int themeColor = Color.parseColor("#B24242");
     public static float minAudioStrength = 0.40f;
@@ -421,6 +420,9 @@ public class HomeActivity extends AppCompatActivity
     List<String> minuteList;
     Handler sleepHandler;
 
+    //ad
+    private InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -466,14 +468,6 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 showFragment("recent");
-            }
-        });
-
-        soundCloudViewAll = (TextView) findViewById(R.id.soundCloud_view_all);
-        soundCloudViewAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showFragment("allPlaylists");
             }
         });
 
@@ -719,7 +713,6 @@ public class HomeActivity extends AppCompatActivity
 
         localRecyclerContainer = (RelativeLayout) findViewById(R.id.localRecyclerContainer);
         recentsRecyclerContainer = (RelativeLayout) findViewById(R.id.recentsRecyclerContainer);
-        soundcloudRecyclerContainer = (RelativeLayout) findViewById(R.id.soundCloudRecyclerContainer);
         streamRecyclerContainer = (RelativeLayout) findViewById(R.id.streamRecyclerContainer);
         playlistRecyclerContainer = (RelativeLayout) findViewById(R.id.playlistRecyclerContainer);
 
@@ -736,7 +729,6 @@ public class HomeActivity extends AppCompatActivity
         streamNothingText = (TextView) findViewById(R.id.streamNothingText);
         recentsNothingText = (TextView) findViewById(R.id.recentsNothingText);
         playlistNothingText = (TextView) findViewById(R.id.playlistNothingText);
-        soundCloudNothingText = (TextView) findViewById(R.id.soundCloudNothingText);
 
         localViewAll = (TextView) findViewById(R.id.localViewAll);
         localViewAll.setOnClickListener(new View.OnClickListener() {
@@ -804,6 +796,55 @@ public class HomeActivity extends AppCompatActivity
             }
 
         });
+
+        // adMob
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-5814663467390565/8932967614");
+//        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                Log.i("Ads", "onAdLoaded");
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+                Log.i("Ads", "onAdFailedToLoad");
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when the ad is displayed.
+                Log.i("Ads", "onAdOpened");
+//                enterMainPage();
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+                Log.i("Ads", "onAdLeftApplication");
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when when the interstitial ad is closed.
+                Log.i("Ads", "onAdClosed");
+            }
+        });
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if( mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                }
+            }
+        }, 3000);
 
         new loadSavedData().execute();
 
@@ -1139,11 +1180,6 @@ public class HomeActivity extends AppCompatActivity
                     if (recentlyPlayed == null) {
                         recentlyPlayed = new RecentlyPlayed();
                     }
-
-                    if (cloudPlaylists == null) {
-                        cloudPlaylists = new SoundCloudPlaylists();
-                    }
-
                     if (allMusicFolders == null) {
                         allMusicFolders = new AllMusicFolders();
                     }
@@ -1844,51 +1880,51 @@ public class HomeActivity extends AppCompatActivity
             } else {
                 if (isLocalVisible) {
                     hideFragment("local");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isQueueVisible) {
                     hideFragment("queue");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isStreamVisible) {
                     hideFragment("stream");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isPlaylistVisible) {
                     hideFragment("playlist");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isNewPlaylistVisible) {
                     hideFragment("newPlaylist");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isEqualizerVisible) {
                     finalSelectedTracks.clear();
                     hideFragment("equalizer");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isFavouriteVisible) {
                     hideFragment("favourite");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isAllPlaylistVisible) {
                     hideFragment("allPlaylists");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isFolderContentVisible) {
                     hideFragment("folderContent");
                     setTitle("Folders");
                 } else if (isAllFolderVisible) {
                     hideFragment("allFolders");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isAllSavedDnaVisisble) {
                     hideFragment("allSavedDNAs");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isSavedDNAVisible) {
                     hideFragment("savedDNA");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isRecentVisible) {
                     hideFragment("recent");
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (isAboutVisible) {
                     hideFragment("About");
                     setTitle("Settings");
                 } else if (isSettingsVisible) {
                     hideFragment("settings");
                     new SaveSettings().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-                    setTitle("Music DNA");
+                    setTitle("Music FM");
                 } else if (!isPlayerTransitioning) {
                     startActivity(new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME));
                 }
@@ -3013,7 +3049,7 @@ public class HomeActivity extends AppCompatActivity
     public void onPlaylistPlayAll() {
         onQueueItemClicked(0);
         hideFragment("playlist");
-        setTitle("Music DNA");
+        setTitle("Music FM");
     }
 
     @Override
@@ -4255,7 +4291,7 @@ public class HomeActivity extends AppCompatActivity
     public void hideFragment(String type) {
         if (type.equals("local")) {
             isLocalVisible = false;
-            setTitle("Music DNA");
+            setTitle("Music FM");
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("local");
@@ -4276,7 +4312,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("stream")) {
             isStreamVisible = false;
-            setTitle("Music DNA");
+            setTitle("Music FM");
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("stream");
@@ -4306,7 +4342,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("favourite")) {
             isFavouriteVisible = false;
-            setTitle("Music DNA");
+            setTitle("Music FM");
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("favourite");
@@ -4327,7 +4363,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("allPlaylists")) {
             isAllPlaylistVisible = false;
-            setTitle("Music DNA");
+            setTitle("Music FM");
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("allPlaylists");
@@ -4347,7 +4383,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("allFolders")) {
             isAllFolderVisible = false;
-            setTitle("Music DNA");
+            setTitle("Music FM");
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("allFolders");
@@ -4358,7 +4394,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("allSavedDNAs")) {
             isAllSavedDnaVisisble = false;
-            setTitle("Music DNA");
+            setTitle("Music FM");
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("allSavedDNAs");
@@ -4387,7 +4423,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("recent")) {
             isRecentVisible = false;
-            setTitle("Music DNA");
+            setTitle("Music FM");
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("recent");
@@ -4398,7 +4434,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("settings")) {
             isSettingsVisible = false;
-            setTitle("Music DNA");
+            setTitle("Music FM");
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("settings");
@@ -4448,7 +4484,7 @@ public class HomeActivity extends AppCompatActivity
 
         navigationView.setCheckedItem(R.id.nav_home);
 
-        setTitle("Music DNA");
+        setTitle("Music FM");
 
     }
 

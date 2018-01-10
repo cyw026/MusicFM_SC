@@ -212,70 +212,10 @@
                 android:background="#565656" />
 
             <RelativeLayout
-                android:id="@+id/soundCloudRecyclerContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/recentsRecyclerContainer"
-                android:layout_marginLeft="-6dp"
-                android:layout_marginRight="-6dp"
-                android:layout_marginTop="0dp">
-
-                <TextView
-                    android:id="@+id/soundCloudRecyclerLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Sound Cloud"
-                    android:textColor="#FFF"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/soundCloudNothingText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/soundCloudRecyclerLabel"
-                    android:layout_centerInParent="true"
-                    android:layout_marginBottom="25dp"
-                    android:layout_marginTop="25dp"
-                    android:text="Nothing to Show !"
-                    android:textColor="#888"
-                    android:textSize="13dp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/soundCloud_view_all"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/soundCloudRecyclerLabel"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="15dp"
-                    android:text="VIEW ALL"
-                    android:textColor="#FFF"
-                    android:textSize="13sp" />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/soundCloudMusicList_home"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/soundCloudRecyclerLabel"
-                    android:padding="5dp" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_below="@+id/recentsRecyclerContainer"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="#565656" />
-
-            <RelativeLayout
                 android:id="@+id/playlistRecyclerContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/soundCloudRecyclerContainer"
+                android:layout_below="@+id/recentsRecyclerContainer"
                 android:layout_marginLeft="-6dp"
                 android:layout_marginRight="-6dp"
                 android:layout_marginTop="3dp">
@@ -343,9 +283,8 @@
 
                 <RelativeLayout
                     android:id="@+id/localBanner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:visibility="gone">
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
 
                     <ImageView
                         android:layout_width="match_parent"

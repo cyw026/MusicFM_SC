@@ -22,7 +22,7 @@ public class SoundCloudPlaylists {
         this.playlists = playlists;
     }
 
-    public void addPlaylist(Playlist pl){
+    public void addPlaylist(SoundCloudPlaylist pl){
         playlists.add(pl);
     }
 
