@@ -55,7 +55,7 @@ import com.musicfm.cloud.MusicFM.notificationmanager.AudioPlayerBroadcastReceive
 import com.musicfm.cloud.MusicFM.R;
 import com.musicfm.cloud.MusicFM.utilities.DownloadThread;
 import com.musicfm.cloud.MusicFM.visualizers.VisualizerView;
-import com.musicfm.cloud.MusicFM.imageloader.ImageLoader;
+import com.musicfm.cloud.MusicFM.imageLoader.ImageLoader;
 import com.squareup.leakcanary.RefWatcher;
 import com.squareup.picasso.Picasso;
 import com.wang.avi.AVLoadingIndicatorView;

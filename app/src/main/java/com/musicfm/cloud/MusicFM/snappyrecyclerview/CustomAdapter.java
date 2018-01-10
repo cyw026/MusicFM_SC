@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import com.github.mmin18.widget.RealtimeBlurView;
 import com.musicfm.cloud.MusicFM.models.UnifiedTrack;
 import com.musicfm.cloud.MusicFM.R;
-import com.musicfm.cloud.MusicFM.imageloader.ImageLoader;
+import com.musicfm.cloud.MusicFM.imageLoader.ImageLoader;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

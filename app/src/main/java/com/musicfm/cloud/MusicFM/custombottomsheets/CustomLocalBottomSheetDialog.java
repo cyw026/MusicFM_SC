@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.musicfm.cloud.MusicFM.activities.HomeActivity;
 import com.musicfm.cloud.MusicFM.models.LocalTrack;
 import com.musicfm.cloud.MusicFM.R;
-import com.musicfm.cloud.MusicFM.imageloader.ImageLoader;
+import com.musicfm.cloud.MusicFM.imageLoader.ImageLoader;
 
 /**
  * Created by Harjot on 21-Oct-16.

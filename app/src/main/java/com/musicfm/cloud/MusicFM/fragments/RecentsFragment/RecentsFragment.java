@@ -32,7 +32,7 @@ import com.musicfm.cloud.MusicFM.MusicDNAApplication;
 import com.musicfm.cloud.MusicFM.R;
 import com.musicfm.cloud.MusicFM.activities.SplashActivity;
 import com.musicfm.cloud.MusicFM.utilities.CommonUtils;
-import com.musicfm.cloud.MusicFM.imageloader.ImageLoader;
+import com.musicfm.cloud.MusicFM.imageLoader.ImageLoader;
 import com.squareup.leakcanary.RefWatcher;
 import com.squareup.picasso.Picasso;
 

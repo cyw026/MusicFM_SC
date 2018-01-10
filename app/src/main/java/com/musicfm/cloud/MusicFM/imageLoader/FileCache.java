@@ -1,4 +1,4 @@
-package com.musicfm.cloud.MusicFM.imageloader;
+package com.musicfm.cloud.MusicFM.imageLoader;
 
 /**
  * Created by Harjot on 06-Apr-16.

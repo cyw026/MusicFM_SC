@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.musicfm.cloud.MusicFM.models.LocalTrack;
 import com.musicfm.cloud.MusicFM.R;
-import com.musicfm.cloud.MusicFM.imageloader.ImageLoader;
+import com.musicfm.cloud.MusicFM.imageLoader.ImageLoader;
 
 import java.util.List;
 

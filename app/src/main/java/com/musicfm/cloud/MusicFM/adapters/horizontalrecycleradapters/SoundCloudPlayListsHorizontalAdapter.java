@@ -24,7 +24,7 @@ public class SoundCloudPlayListsHorizontalAdapter extends RecyclerView.Adapter<S
 
     List<Track> playLists;
     Context ctx;
-    com.musicfm.cloud.MusicFM.imageloader.ImageLoader imgLoader;
+    com.musicfm.cloud.MusicFM.imageLoader.ImageLoader imgLoader;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView art;
@@ -43,7 +43,7 @@ public class SoundCloudPlayListsHorizontalAdapter extends RecyclerView.Adapter<S
     public SoundCloudPlayListsHorizontalAdapter(List<Track> playLists, Context ctx) {
         this.playLists = playLists;
         this.ctx = ctx;
-        imgLoader = new com.musicfm.cloud.MusicFM.imageloader.ImageLoader(ctx);
+        imgLoader = new com.musicfm.cloud.MusicFM.imageLoader.ImageLoader(ctx);
     }
 
     @Override

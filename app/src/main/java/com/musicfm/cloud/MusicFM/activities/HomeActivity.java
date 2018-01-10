@@ -68,8 +68,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.view.HapticFeedbackConstants;
 
-import com.github.amlcurran.showcaseview.ShowcaseView;
-import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -140,7 +138,7 @@ import com.musicfm.cloud.MusicFM.utilities.comparators.LocalMusicComparator;
 import com.musicfm.cloud.MusicFM.utilities.FileUtils;
 import com.musicfm.cloud.MusicFM.utilities.MediaCacheUtils;
 import com.musicfm.cloud.MusicFM.visualizers.VisualizerView;
-import com.musicfm.cloud.MusicFM.imageloader.ImageLoader;
+import com.musicfm.cloud.MusicFM.imageLoader.ImageLoader;
 import com.squareup.leakcanary.RefWatcher;
 
 import java.io.File;
@@ -291,6 +289,7 @@ public class HomeActivity extends AppCompatActivity
     NavigationView navigationView;
 
     Call<List<Track>> call;
+    Call<SoundCloudPlaylist> playlistCall;
 
     SearchView searchView;
     MenuItem searchItem;
@@ -344,8 +343,6 @@ public class HomeActivity extends AppCompatActivity
     public byte[] mBytes;
 
     public HeadSetReceiver headSetReceiver;
-
-    ShowcaseView showCase;
 
     View playerContainer;
 
@@ -752,51 +749,6 @@ public class HomeActivity extends AppCompatActivity
         progress.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         progress.show();
 
-        showCase = new ShowcaseView.Builder(this)
-                .blockAllTouches()
-                .singleShot(0)
-                .setStyle(R.style.CustomShowcaseTheme)
-                .useDecorViewAsParent()
-                .replaceEndButton(mEndButton)
-                .setContentTitlePaint(tp)
-                .setTarget(new ViewTarget(R.id.recentsRecyclerLabel, this))
-                .setContentTitle("Recents and Playlists")
-                .setContentText("Here all you recent songs and playlists will be listed." +
-                        "Long press the cards or playlists for more options \n" +
-                        "\n" +
-                        "(Press Next to continue / Press back to Hide)")
-                .build();
-        showCase.setButtonText("Next");
-        showCase.setButtonPosition(lps);
-        showCase.overrideButtonClick(new View.OnClickListener() {
-            int count1 = 0;
-
-            @Override
-            public void onClick(View v) {
-                count1++;
-                switch (count1) {
-                    case 1:
-                        showCase.setTarget(new ViewTarget(R.id.local_banner_alt_showcase, (Activity) ctx));
-                        showCase.setContentTitle("Local Songs");
-                        showCase.setContentText("See all songs available locally, classified on basis of Artist and Album");
-                        showCase.setButtonPosition(lps);
-                        showCase.setButtonText("Next");
-                        break;
-                    case 2:
-                        showCase.setTarget(new ViewTarget(searchView.getId(), (Activity) ctx));
-                        showCase.setContentTitle("Search");
-                        showCase.setContentText("Search for songs from local library and SoundCloud™");
-                        showCase.setButtonPosition(lps);
-                        showCase.setButtonText("Done");
-                        break;
-                    case 3:
-                        showCase.hide();
-                        break;
-                }
-            }
-
-        });
-
         // adMob
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-5814663467390565/8932967614");
@@ -847,6 +799,8 @@ public class HomeActivity extends AppCompatActivity
         }, 3000);
 
         new loadSavedData().execute();
+
+        getHotSongs();
 
     }
 
@@ -1760,6 +1714,57 @@ public class HomeActivity extends AppCompatActivity
         tmpPL.clear();
     }
 
+    private void getHotSongs() {
+
+        new Thread(new CancelCall()).start();
+
+
+            /*Update the Streaming List*/
+
+
+        Retrofit client = new Retrofit.Builder()
+                .baseUrl(Config.API_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        StreamService ss = client.create(StreamService.class);
+        playlistCall = ss.getHotTracks();
+        playlistCall.enqueue(new Callback<SoundCloudPlaylist>() {
+
+            @Override
+            public void onResponse(Call<SoundCloudPlaylist> call, Response<SoundCloudPlaylist> response) {
+                if (response.isSuccessful()) {
+//                    streamingTrackList = response.body();
+//                    sAdapter = new StreamTracksHorizontalAdapter(streamingTrackList, ctx);
+//                    LinearLayoutManager mLayoutManager = new LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false);
+//                    soundcloudRecyclerView.setLayoutManager(mLayoutManager);
+//                    soundcloudRecyclerView.setItemAnimator(new DefaultItemAnimator());
+//                    soundcloudRecyclerView.setAdapter(sAdapter);
+//
+//                    if (streamingTrackList.size() == 0) {
+//                        streamRecyclerContainer.setVisibility(GONE);
+//                    } else {
+//                        streamRecyclerContainer.setVisibility(View.VISIBLE);
+//                    }
+//
+//                    stopLoadingIndicator();
+//                    (soundcloudRecyclerView.getAdapter()).notifyDataSetChanged();
+//
+//                    StreamMusicFragment sFrag = (StreamMusicFragment) fragMan.findFragmentByTag("stream");
+//                    if (sFrag != null) {
+//                        sFrag.dataChanged();
+//                    }
+                } else {
+//                    stopLoadingIndicator();
+                }
+                Log.d("RETRO", response.body() + "");
+            }
+
+            @Override
+            public void onFailure(Call<SoundCloudPlaylist> call, Throwable t) {
+                Log.d("RETRO1", t.getMessage());
+            }
+        });
+    }
     public boolean checkTrack(LocalTrack lt) {
         for (int i = 0; i < localTrackList.size(); i++) {
             LocalTrack localTrack = localTrackList.get(i);
@@ -1824,8 +1829,6 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else if (showCase != null && showCase.isShowing()) {
-            showCase.hide();
         } else if (plFrag != null && plFrag.isShowcaseVisible()) {
             plFrag.hideShowcase();
         } else if (lFrag != null && lFrag.isShowcaseVisible()) {
