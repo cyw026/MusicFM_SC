@@ -217,7 +217,7 @@ public class EditLocalSongFragment extends Fragment {
                     }
 
                     if (!error) {
-                        Toast.makeText(ctx, "Saved", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ctx, ctx.getString(R.string.toast_saved), Toast.LENGTH_SHORT).show();
                         HomeActivity.editSong.setTitle(titleText.getText().toString().trim());
                         HomeActivity.editSong.setArtist(artistText.getText().toString().trim());
                         HomeActivity.editSong.setAlbum(albumText.getText().toString().trim());

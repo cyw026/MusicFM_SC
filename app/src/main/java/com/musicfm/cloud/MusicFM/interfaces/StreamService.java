@@ -17,6 +17,9 @@ public interface StreamService {
     @GET("/tracks?client_id=" + Config.CLIENT_ID)
     Call<List<Track>> getTracks(@Query("q") String query, @Query("limit") int limit);
 
-    @GET("/playlists/418700069?client_id=" + Config.CLIENT_ID)
+    @GET("/playlists/418718078?client_id=" + Config.CLIENT_ID)
     Call<SoundCloudPlaylist> getHotTracks();
+
+    @GET("/resolve?url=https://soundcloud.com/musicfmjp/sets&client_id=" + Config.CLIENT_ID)
+    Call<List<SoundCloudPlaylist>> getPlaylistSets();
 }

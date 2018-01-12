@@ -9,26 +9,26 @@ import java.util.List;
 
 public class HotTracks {
 
-    private List<UnifiedTrack> songList;
+    private List<Track> tracks;
     private String playlistName;
+    private String artwork_url;
 
-    public HotTracks(String name) {
-        playlistName = name;
-        songList = new ArrayList<UnifiedTrack>();
+    public HotTracks() {
+        tracks = new ArrayList<Track>();
     }
 
-    public HotTracks(List<UnifiedTrack> songList, String playlistName) {
-        this.songList = songList;
-        this.playlistName = playlistName;
+    public HotTracks(List<Track> songList) {
+        this.tracks = songList;
     }
 
-    public List<UnifiedTrack> getSongList() {
-        return songList;
+    public List<Track> getTracks() {
+        return tracks;
     }
 
-    public void setSongList(List<UnifiedTrack> songList) {
-        this.songList = songList;
+    public void setTracks(List<Track> tracks) {
+        this.tracks = tracks;
     }
+
 
     public String getPlaylistName() {
         return playlistName;
@@ -37,8 +37,15 @@ public class HotTracks {
     public void setPlaylistName(String playlistName) {
         this.playlistName = playlistName;
     }
+    public String getArtwork_url() {
+        return artwork_url;
+    }
 
-    public void addSong(UnifiedTrack track) {
-        songList.add(track);
+    public void setArtwork_url(String artwork_url) {
+        this.artwork_url = artwork_url;
+    }
+
+    public void addSong(Track track) {
+        tracks.add(track);
     }
 }

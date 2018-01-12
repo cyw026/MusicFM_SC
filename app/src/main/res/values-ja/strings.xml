@@ -1,2 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--<string name="app_name">Music FM</string>-->
+
+    <!--&lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
+    <!--<string name="title_activity_home">Music FM</string>-->
+    <!--<string name="navigation_drawer_open">Open navigation drawer</string>-->
+    <!--<string name="navigation_drawer_close">Close navigation drawer</string>-->
+    <!--<string name="action_settings">設定</string>-->
+    <!--<string name="action_sleep">スリープタイマー</string>-->
+
+    <!--&lt;!&ndash;common&ndash;&gt;-->
+    <!--<string name="clear">クリア</string>-->
+    <!--<string name="save">保存する</string>-->
+    <!--<string name="cancel">キャンセル</string>-->
+    <!--<string name="set">セット</string>-->
+    <!--<string name="remove">削除する</string>-->
+    <!--<string name="more">もっと</string>-->
+    <!--<string name="settings">設定</string>-->
+    <!--<string name="about">およそ</string>-->
+    <!--<string name="title">Title</string>-->
+    <!--<string name="no_content">表示するものは何もない !</string>-->
+    <!--<string name="last_opened">最後に開かれた</string>-->
+    <!--<string name="sleep_timer">スリープタイマー</string>-->
+
+    <!--&lt;!&ndash; fragment title &ndash;&gt;-->
+    <!--<string name="all_folder">すべてのフォルダ</string>-->
+    <!--<string name="all_playlist">すべてのプレイリスト</string>-->
+    <!--<string name="edit_song">編集</string>-->
+    <!--<string name="equalizer">イコライザ</string>-->
+    <!--<string name="favourites">お気に入り</string>-->
+    <!--<string name="no_favourites">お気に入りリストなし</string>-->
+    <!--<string name="folders">フォルダ</string>-->
+    <!--<string name="new_playlist">新しいプレイリスト</string>-->
+    <!--<string name="queue">キュー</string>-->
+    <!--<string name="recent">最近再生された</string>-->
+    <!--<string name="no_recent">最近の曲はありません</string>-->
+    <!--<string name="settings_title">設定</string>-->
+    <!--<string name="saved_dna">保存されたDNA</string>-->
+    <!--<string name="no_saved_dna">いいえ保存されたDNAはありません</string>-->
+
+    <!--&lt;!&ndash; nav title &ndash;&gt;-->
+    <!--<string name="nav_home">ホームページ</string>-->
+    <!--<string name="nav_local_music">ローカル音楽</string>-->
+    <!--<string name="nav_playlists">プレイリスト</string>-->
+    <!--<string name="nav_recently_played">最近再生しました</string>-->
+    <!--<string name="nav_favourites">お気に入り</string>-->
+    <!--<string name="nav_folders">フォルダ</string>-->
+    <!--<string name="nav_saved_dna">保存されたDNA</string>-->
+    <!--<string name="nav_settings">設定</string>-->
+
+
+    <!--<string name="local_music">地元</string>-->
+    <!--<string name="local_songs">曲</string>-->
+    <!--<string name="local_albums">アルバム</string>-->
+    <!--<string name="local_artists">アーティスト</string>-->
+    <!--<string name="local_recent">最近</string>-->
+
+    <!--&lt;!&ndash; toast &ndash;&gt;-->
+    <!--<string name="toast_queue_saved">キューに保存!</string>-->
+    <!--&lt;!&ndash;<string name="toast_queue_saved">Queue saved!</string>&ndash;&gt;-->
+    <!--&lt;!&ndash;<string name="toast_queue_saved">Queue saved!</string>&ndash;&gt;-->
+    <!--&lt;!&ndash;<string name="toast_queue_saved">Queue saved!</string>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;&ndash;&gt;-->
+    <!--<string name="playlist_latest">最新音乐</string>-->
+    <!--<string name="playlist_hot">热门歌曲</string>-->
+    <!--<string name="playlists_recommended">推荐歌单</string>-->
+    <!--<string name="playlist_last_added">最新添加</string>-->
+    <!--<string name="playlist_recently_played">最近播放</string>-->
+    <!--<string name="playlist_top_tracks">我的最佳曲目</string>-->
+
+    <!--&lt;!&ndash;menu&ndash;&gt;-->
+    <!--<string name="home">主页</string>-->
+    <!--<string name="recently_played">最近播放</string>-->
+    <!--<string name="save_dna">保存DNA</string>-->
+
+    <!--<string name="songs">歌曲</string>-->
+    <!--<string name="albums">专辑</string>-->
+    <!--<string name="artists">艺术家</string>-->
+    <!--<string name="library">库</string>-->
+    <!--<string name="playlists">播放列表</string>-->
+    <!--<string name="playing_queue">播放队列</string>-->
+    <!--<string name="now_playing">正在播放</string>-->
+    <!--<string name="help_and_feedback">帮助和反馈</string>-->
+    <!--<string name="search">検索</string>-->
+    <!--<string name="action_shuffle_all">全部随机</string>-->
+    <!--<string name="action_equalizer">均衡器</string>-->
+    <!--<string name="search_library">在库中搜索</string>-->
+
+    <!--&lt;!&ndash;bottom sheet&ndash;&gt;-->
+    <!--<string name="play">遊びます</string>-->
+    <!--<string name="play_next">次の再生</string>-->
+    <!--<string name="add_to_queue">キューに追加</string>-->
+    <!--<string name="add_to_playlist">プレイリストに追加</string>-->
+    <!--<string name="add_to_favourites">お気に入りリストに追加</string>-->
+    <!--<string name="bottom_sheet_share">シェア</string>-->
+    <!--<string name="bottom_sheet_edit">編集</string>-->
+
+    <!--<string name="accessibility_play">播放</string>-->
+    <!--<string name="accessibility_pause">暂停</string>-->
+    <!--<string name="accessibility_next">下一首</string>-->
+    <!--<string name="accessibility_prev">上一首</string>-->
+    <!--<string name="accessibility_shuffle">随机</string>-->
+    <!--<string name="accessibility_shuffle_all">全部随机</string>-->
+    <!--<string name="accessibility_repeat">循环</string>-->
+    <!--<string name="accessibility_repeat_all">全部循环</string>-->
+    <!--<string name="accessibility_repeat_one">单曲循环</string>-->
+
+    <!--<string name="count_song"><xliff:g id="count">%d</xliff:g> 首歌曲</string>-->
+    <!--<string name="count_songs"><xliff:g id="count">%d</xliff:g> 首歌曲</string>-->
+    <!--<string name="count_album"><xliff:g id="count">%d</xliff:g> 张专辑</string>-->
+    <!--<string name="count_albums"><xliff:g id="count">%d</xliff:g> 张专辑</string>-->
+    <!--<string name="count_artist"><xliff:g id="count">%d</xliff:g> 位艺术家</string>-->
+    <!--<string name="count_artists"><xliff:g id="count">%d</xliff:g> 位艺术家</string>-->
+
+    <!--<string name="number_song_add_queue">已将 <xliff:g example="1" id="number">%d</xliff:g> 首歌曲添加到队列</string>-->
+    <!--<string name="number_songs_add_queue">已将 <xliff:g example="1" id="number">%d</xliff:g> 首歌曲添加到队列</string>-->
+    <!--<string name="number_song_add_playlist">已将 <xliff:g example="1" id="number">%d</xliff:g> 首歌曲添加到播放列表</string>-->
+    <!--<string name="number_songs_add_playlist">已将 <xliff:g example="1" id="number">%d</xliff:g> 首歌曲添加到播放列表</string>-->
+
+    <!--&lt;!&ndash; About Fragment strings &ndash;&gt;-->
+    <!--<string name="mdg_description">An Active students group at IIT Roorkee directed towards developing useful applications</string>-->
+    <!--<string name="share_application_text">Check out Music FM an awesome music player from Play Store. Link: </string>-->
+    <!--<string name="music_dna_short_link">http://bit.ly/musicDnaApp</string>-->
+    <!--<string name="license_text">Music FM and related material are distributed under \'Attribution-NonCommercial-ShareAlike 4.0 International license\'</string>-->
+    <!--<string name="license_link">https://github.com/harjot-oberai/MusicDNA/blob/master/LICENSE.md</string>-->
+</resources>

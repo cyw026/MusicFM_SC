@@ -69,11 +69,6 @@ public class RecentsTrackAdapter extends RecyclerView.Adapter<RecentsTrackAdapte
         songList.remove(position);
         notifyItemRemoved(position);
         if (position < 10) {
-            HomeActivity.continuePlayingList.clear();
-            for (int i = 0; i < Math.min(10, HomeActivity.recentlyPlayed.getRecentlyPlayed().size()); i++) {
-                HomeActivity.continuePlayingList.add(HomeActivity.recentlyPlayed.getRecentlyPlayed().get(i));
-            }
-            homeActivity.rAdapter.notifyDataSetChanged();
             homeActivity.refreshHeaderImages();
         }
 

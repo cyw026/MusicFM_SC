@@ -31,7 +31,7 @@
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/local_fragment_search_icon"
             android:layout_toRightOf="@+id/local_fragment_back_btn"
-            android:hint="Search"
+            android:hint="@string/search_library"
             android:paddingLeft="5dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#676767"
@@ -44,7 +44,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/local_fragment_back_btn"
-            android:text="LOCAL"
+            android:text="@string/local_music"
             android:textColor="#FFFFFF"
             android:textSize="23sp" />
 

@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="EDIT"
+                android:text="@string/edit_song"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
@@ -68,7 +68,7 @@
                 android:id="@+id/edit_song_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Title"
+                android:hint="@string/title"
                 android:textColor="#FFF" />
         </android.support.design.widget.TextInputLayout>
 
@@ -82,7 +82,7 @@
                 android:id="@+id/edit_song_artist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Artist"
+                android:hint="@string/artists"
                 android:textColor="#FFF" />
         </android.support.design.widget.TextInputLayout>
 
@@ -96,7 +96,7 @@
                 android:id="@+id/edit_song_album"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Album"
+                android:hint="@string/albums"
                 android:textColor="#FFF" />
         </android.support.design.widget.TextInputLayout>
 
@@ -109,7 +109,7 @@
         android:layout_above="@+id/bottom_margin_layout"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:text="SAVE"
+        android:text="@string/save"
         android:textColor="#FFF"
         android:textSize="17dp" />
 

@@ -176,7 +176,7 @@ public class ViewSavedDNA extends Fragment {
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        if (item.getTitle().equals("View")) {
+                        if (item.getTitle().equals(getContext().getString(R.string.view))) {
                             vdAdapter.notifyItemChanged(selectedDNA);
                             selectedDNA = position;
                             vdAdapter.notifyItemChanged(selectedDNA);
@@ -186,7 +186,7 @@ public class ViewSavedDNA extends Fragment {
                             Bitmap bmp = bitmapFromBase64String(dna.getBase64encodedBitmap());
                             mVisualizerView2.setBmp(bmp);
                             mVisualizerView2.update();
-                        } else if (item.getTitle().equals("Delete")) {
+                        } else if (item.getTitle().equals(getContext().getString(R.string.delete))) {
                             HomeActivity.savedDNAs.getSavedDNAs().remove(position);
                             vdAdapter.notifyItemRemoved(position);
 

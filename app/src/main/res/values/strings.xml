@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Music FM</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="title_activity_home">Music FM</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">設定</string>
+    <string name="action_sleep">スリープタイマー</string>
 
-    <string name="action_settings">Settings</string>
+    <!--common-->
+    <string name="view">ビュー</string>
+    <string name="delete">削除</string>
+    <string name="rename">名前を変更</string>
+    <string name="clear">クリア</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="set">設置</string>
+    <string name="remove">削除</string>
+    <string name="more">もっと見る</string>
+    <string name="settings">設定</string>
+    <string name="about">情報</string>
+    <string name="title">タイトル</string>
+    <string name="no_content">ありません!</string>
+    <string name="last_opened">最後に開いた</string>
+    <string name="sleep_timer">睡眠時間</string>
+
+    <!-- fragment title -->
+    <string name="all_folder">全てのフォルダー</string>
+    <string name="all_playlist">全てのプレイリスト</string>
+    <string name="edit_song">編集</string>
+    <string name="equalizer">イコライザ</string>
+    <string name="favourites">お気に入り</string>
+    <string name="no_favourites">ありません</string>
+    <string name="folders">フォルダー</string>
+    <string name="new_playlist">新しいプレイリスト</string>
+    <string name="queue">キュー</string>
+    <string name="recent">最近再生した曲</string>
+    <string name="no_recent">ありません</string>
+    <string name="settings_title">タイトル設定</string>
+    <string name="saved_dna">保存</string>
+    <string name="no_saved_dna">ありません</string>
+
+    <!-- nav title -->
+    <string name="nav_home">ホーム</string>
+    <string name="nav_local_music">ローカル音楽</string>
+    <string name="nav_playlists">プレイリスト</string>
+    <string name="nav_recently_played">最近再生した曲</string>
+    <string name="nav_favourites">お気に入り</string>
+    <string name="nav_folders">フォルダー</string>
+    <string name="nav_saved_dna">保存</string>
+    <string name="nav_settings">設定</string>
+
+
+    <!---->
+    <string name="local_music">ローカル</string>
+    <string name="local_songs">音楽</string>
+    <string name="local_albums">アルバム</string>
+    <string name="local_artists">アーティスト</string>
+    <string name="local_recent">最近再生した曲</string>
+
+    <!-- toast -->
+    <string name="toast_queue_saved">キューを保存</string>
+    <string name="toast_saved">保存</string>
+    <string name="toast_already_present">プレイリストに追加しました</string>
+    <!--<string name="toast_queue_saved">キューを保存しました</string>-->
+
+    <!---->
+    <string name="playlist_latest">最新曲</string>
+    <string name="playlist_hot">人気曲</string>
+    <string name="playlists_recommended">オススメのプレイリスト</string>
+    <string name="playlist_last_added">最近追加した曲</string>
+    <string name="playlist_recently_played">最近再生した曲</string>
+    <string name="playlist_top_tracks">もっとも好きな曲</string>
+
+    <!--menu-->
+    <string name="songs">音楽</string>
+    <string name="albums">アルバム</string>
+    <string name="artists">アーティスト</string>
+    <string name="library">ライブラリー</string>
+    <string name="playlists">プレイリスト</string>
+    <string name="playing_queue">再生キュー</string>
+    <string name="now_playing">再生中</string>
+    <string name="help_and_feedback">フィードバック</string>
+    <string name="search">検索</string>
+    <string name="action_shuffle_all">シャッフル</string>
+    <string name="action_equalizer">イコライザ</string>
+    <string name="search_library">ライブラリーで検索</string>
+
+    <!--bottom sheet-->
+    <string name="play">再生</string>
+    <string name="play_next">次</string>
+    <string name="add_to_queue">キューに追加</string>
+    <string name="add_to_playlist">プレイリストに追加</string>
+    <string name="add_to_favourites">お気に入り</string>
+    <string name="bottom_sheet_share">シェア</string>
+    <string name="bottom_sheet_edit">編集</string>
+
+    <string name="count_song"><xliff:g id="count">%d</xliff:g> 曲</string>
+    <string name="count_songs"><xliff:g id="count">%d</xliff:g> 曲</string>
+    <string name="count_album"><xliff:g id="count">%d</xliff:g> アルバム</string>
+    <string name="count_albums"><xliff:g id="count">%d</xliff:g> アルバム</string>
+    <string name="count_artist"><xliff:g id="count">%d</xliff:g> アーティスト</string>
+    <string name="count_artists"><xliff:g id="count">%d</xliff:g> アーティスト</string>
+
+    <string name="number_song_add_queue">Added <xliff:g example="1" id="number">%d</xliff:g> song(s) to queue</string>
+    <string name="number_songs_add_queue">Added <xliff:g example="1" id="number">%d</xliff:g> song(s) to queue</string>
+    <string name="number_song_add_playlist">Added <xliff:g example="1" id="number">%d</xliff:g> song(s) to playlist</string>
+    <string name="number_songs_add_playlist">Added <xliff:g example="1" id="number">%d</xliff:g> song(s) to playlist</string>
 
     <!-- About Fragment strings -->
     <string name="mdg_description">An Active students group at IIT Roorkee directed towards developing useful applications</string>

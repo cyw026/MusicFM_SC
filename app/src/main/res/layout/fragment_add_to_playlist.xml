@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="NEW PLAYLIST"
+            android:text="@string/new_playlist"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
 
@@ -53,7 +53,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/clear_search_btn"
-            android:hint="Search"
+            android:hint="@string/search"
             android:textColor="#FFFFFF"
             android:textColorHint="#676767"
             android:textSize="18dp" />
@@ -127,7 +127,7 @@
             android:layout_alignParentRight="true"
             android:background="?attr/selectableItemBackground"
             android:paddingRight="16dp"
-            android:text="CLEAR"
+            android:text="@string/clear"
             android:textColor="#BCBCBC"
             android:textSize="17sp" />
 

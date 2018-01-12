@@ -6,19 +6,26 @@
     <!--<string name="title_activity_home">Music FM</string>-->
     <!--<string name="navigation_drawer_open">Open navigation drawer</string>-->
     <!--<string name="navigation_drawer_close">Close navigation drawer</string>-->
-    <!--<string name="action_settings">设置</string>-->
-    <!--<string name="action_sleep">定时关闭音乐</string>-->
+    <!--<string name="action_settings">Settings</string>-->
+    <!--<string name="action_sleep">Sleep Timer</string>-->
 
     <!--&lt;!&ndash;common&ndash;&gt;-->
-    <!--<string name="clear">清除</string>-->
-    <!--<string name="save">保存</string>-->
-    <!--<string name="cancel">取消</string>-->
-    <!--<string name="more">更多</string>-->
-    <!--<string name="settings">设置</string>-->
-    <!--<string name="about">关于</string>-->
+    <!--<string name="view">View</string>-->
+    <!--<string name="delete">Delete</string>-->
+    <!--<string name="rename">Rename</string>-->
+    <!--<string name="clear">CLEAR</string>-->
+    <!--<string name="save">SAVE</string>-->
+    <!--<string name="cancel">CANCEL</string>-->
+    <!--<string name="set">SET</string>-->
+    <!--<string name="remove">Remove</string>-->
+    <!--<string name="more">More</string>-->
+    <!--<string name="settings">settings</string>-->
+    <!--<string name="about">about</string>-->
     <!--<string name="title">Title</string>-->
     <!--<string name="no_content">Nothing to Show !</string>-->
     <!--<string name="last_opened">上次打开</string>-->
+    <!--<string name="sleep_timer">Sleep Timer</string>-->
+
 
     <!--&lt;!&ndash; fragment title &ndash;&gt;-->
     <!--<string name="all_folder">ALL FOLDERS</string>-->
@@ -46,11 +53,19 @@
     <!--<string name="nav_saved_dna">Saved DNA</string>-->
     <!--<string name="nav_settings">Settings</string>-->
 
+    <!--&lt;!&ndash;&ndash;&gt;-->
     <!--<string name="local_music">LOCAL</string>-->
-    <!--<string name="local_songs">歌曲</string>-->
-    <!--<string name="local_albums">专辑</string>-->
-    <!--<string name="local_artists">艺术家</string>-->
-    <!--<string name="local_recent">最近播放</string>-->
+    <!--<string name="local_songs">Songs</string>-->
+    <!--<string name="local_albums">Albums</string>-->
+    <!--<string name="local_artists">Artists</string>-->
+    <!--<string name="local_recent">Recent</string>-->
+
+    <!--&lt;!&ndash; toast &ndash;&gt;-->
+    <!--<string name="toast_queue_saved">Queue saved!</string>-->
+    <!--<string name="toast_saved">Saved!</string>-->
+    <!--<string name="toast_already_present">Song already present in Playlist</string>-->
+    <!--&lt;!&ndash;<string name="toast_queue_saved">Queue saved!</string>&ndash;&gt;-->
+
 
     <!--&lt;!&ndash;&ndash;&gt;-->
     <!--<string name="playlist_latest">最新音乐</string>-->
@@ -61,41 +76,27 @@
     <!--<string name="playlist_top_tracks">我的最佳曲目</string>-->
 
     <!--&lt;!&ndash;menu&ndash;&gt;-->
-    <!--<string name="home">主页</string>-->
-    <!--<string name="recently_played">最近播放</string>-->
-    <!--<string name="save_dna">保存DNA</string>-->
-
-    <!--<string name="songs">歌曲</string>-->
-    <!--<string name="albums">专辑</string>-->
-    <!--<string name="artists">艺术家</string>-->
-    <!--<string name="library">库</string>-->
-    <!--<string name="playlists">播放列表</string>-->
-    <!--<string name="playing_queue">播放队列</string>-->
-    <!--<string name="now_playing">正在播放</string>-->
-    <!--<string name="help_and_feedback">帮助和反馈</string>-->
-    <!--<string name="search">搜索</string>-->
-    <!--<string name="action_shuffle_all">全部随机</string>-->
-    <!--<string name="action_equalizer">均衡器</string>-->
-    <!--<string name="search_library">在库中搜索</string>-->
+    <!--<string name="songs">Songs</string>-->
+    <!--<string name="albums">Albums</string>-->
+    <!--<string name="artists">Artists</string>-->
+    <!--<string name="library">library</string>-->
+    <!--<string name="playlists">playlists</string>-->
+    <!--<string name="playing_queue">playing queue</string>-->
+    <!--<string name="now_playing">now playing</string>-->
+    <!--<string name="help_and_feedback">help and feedback</string>-->
+    <!--<string name="search">Search</string>-->
+    <!--<string name="action_shuffle_all">shuffle all</string>-->
+    <!--<string name="action_equalizer">equalizer</string>-->
+    <!--<string name="search_library">Search in library</string>-->
 
     <!--&lt;!&ndash;bottom sheet&ndash;&gt;-->
-    <!--<string name="play">播放</string>-->
-    <!--<string name="play_next">下一首播放</string>-->
-    <!--<string name="add_to_queue">添加到队列</string>-->
-    <!--<string name="add_to_playlist">添加到播放列表</string>-->
-    <!--<string name="add_to_favourites">添加到收藏列表</string>-->
+    <!--<string name="play">Play</string>-->
+    <!--<string name="play_next">Play Next</string>-->
+    <!--<string name="add_to_queue">Add to Queue</string>-->
+    <!--<string name="add_to_playlist">Add to Playlist</string>-->
+    <!--<string name="add_to_favourites">Add to Favourites</string>-->
     <!--<string name="bottom_sheet_share">Share</string>-->
     <!--<string name="bottom_sheet_edit">Edit</string>-->
-
-    <!--<string name="accessibility_play">播放</string>-->
-    <!--<string name="accessibility_pause">暂停</string>-->
-    <!--<string name="accessibility_next">下一首</string>-->
-    <!--<string name="accessibility_prev">上一首</string>-->
-    <!--<string name="accessibility_shuffle">随机</string>-->
-    <!--<string name="accessibility_shuffle_all">全部随机</string>-->
-    <!--<string name="accessibility_repeat">循环</string>-->
-    <!--<string name="accessibility_repeat_all">全部循环</string>-->
-    <!--<string name="accessibility_repeat_one">单曲循环</string>-->
 
     <!--<string name="count_song"><xliff:g id="count">%d</xliff:g> 首歌曲</string>-->
     <!--<string name="count_songs"><xliff:g id="count">%d</xliff:g> 首歌曲</string>-->
@@ -104,10 +105,10 @@
     <!--<string name="count_artist"><xliff:g id="count">%d</xliff:g> 位艺术家</string>-->
     <!--<string name="count_artists"><xliff:g id="count">%d</xliff:g> 位艺术家</string>-->
 
-    <!--<string name="number_song_add_queue">已将 <xliff:g example="1" id="number">%d</xliff:g> 首歌曲添加到队列</string>-->
-    <!--<string name="number_songs_add_queue">已将 <xliff:g example="1" id="number">%d</xliff:g> 首歌曲添加到队列</string>-->
-    <!--<string name="number_song_add_playlist">已将 <xliff:g example="1" id="number">%d</xliff:g> 首歌曲添加到播放列表</string>-->
-    <!--<string name="number_songs_add_playlist">已将 <xliff:g example="1" id="number">%d</xliff:g> 首歌曲添加到播放列表</string>-->
+    <!--<string name="number_song_add_queue">Added <xliff:g example="1" id="number">%d</xliff:g> song(s) to queue</string>-->
+    <!--<string name="number_songs_add_queue">Added <xliff:g example="1" id="number">%d</xliff:g> song(s) to queue</string>-->
+    <!--<string name="number_song_add_playlist">Added <xliff:g example="1" id="number">%d</xliff:g> song(s) to playlist</string>-->
+    <!--<string name="number_songs_add_playlist">Added <xliff:g example="1" id="number">%d</xliff:g> song(s) to playlist</string>-->
 
     <!--&lt;!&ndash; About Fragment strings &ndash;&gt;-->
     <!--<string name="mdg_description">An Active students group at IIT Roorkee directed towards developing useful applications</string>-->

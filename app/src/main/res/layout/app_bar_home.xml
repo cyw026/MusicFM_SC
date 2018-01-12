@@ -166,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:text="Recent"
+                    android:text="@string/playlist_hot"
                     android:textColor="#FFF"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -179,7 +179,7 @@
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="25dp"
                     android:layout_marginTop="25dp"
-                    android:text="Nothing to Show !"
+                    android:text="@string/no_content"
                     android:textColor="#888"
                     android:textSize="13dp"
                     android:visibility="invisible" />
@@ -191,7 +191,7 @@
                     android:layout_alignBaseline="@+id/recentsRecyclerLabel"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="15dp"
-                    android:text="VIEW ALL"
+                    android:text="@string/more"
                     android:textColor="#FFF"
                     android:textSize="13sp" />
 
@@ -228,7 +228,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:text="Playlists"
+                    android:text="@string/playlists"
                     android:textColor="#FFF"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -241,7 +241,7 @@
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="25dp"
                     android:layout_marginTop="25dp"
-                    android:text="Nothing to Show !"
+                    android:text="@string/no_content"
                     android:textColor="#888"
                     android:textSize="13dp"
                     android:visibility="invisible" />
@@ -254,7 +254,7 @@
                     android:layout_alignBaseline="@+id/playListRecyclerLabel"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="15dp"
-                    android:text="VIEW ALL"
+                    android:text="@string/more"
                     android:textColor="#FFF"
                     android:textSize="13sp" />
 

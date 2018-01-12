@@ -14,7 +14,7 @@
     <item
         android:id="@+id/action_sleep"
         android:orderInCategory="200"
-        android:title="Sleep Timer"
+        android:title="@string/action_sleep"
         app:showAsAction="never"/>
 
     <item
